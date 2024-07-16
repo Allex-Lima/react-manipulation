@@ -7,27 +7,26 @@ const MyForms = () => {
     const [email, setEmail] = useState()
 
     const handleChange = (event) => {
-        const eventName = event.target.value
-        const eventEmail = event.target.value
-        
        setName(event.target.value)
-       setEmail(eventEmail)
 
-       console.log(name)
-       console.log(email)
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(name, email);
+    }
+    
     return (
         <>
             <div className="container">
-                <form className='form'>
+                <form onSubmit={handleSubmit} className='form'>
                     <div className='div-name'>
                         <label>
                             <span className='sg'>Name</span>
                             <input
                                 type="text"
                                 placeholder="Digite seu name" 
-                                required 
+                                autoFocus
                                 onChange={handleChange}
                                 />
                         </label>
@@ -38,7 +37,6 @@ const MyForms = () => {
                             <input
                             type="email"
                             placeholder="Digite seu e-mail"
-                            required
                             onChange={(event) => setEmail(event.target.value)}
                             />
                         </label>
