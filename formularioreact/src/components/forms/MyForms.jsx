@@ -39,7 +39,7 @@ const MyForms = () => {
                             type="email"
                             placeholder="Digite seu e-mail"
                             required
-                            onChange={handleChange}
+                            onChange={(event) => setEmail(event.target.value)}
                             />
                         </label>
                     </div>
