@@ -14,6 +14,9 @@ const MyForms = ({ user }) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(name, email);
+
+        setEmail('')
+        setName('')
     }
     
     return (
