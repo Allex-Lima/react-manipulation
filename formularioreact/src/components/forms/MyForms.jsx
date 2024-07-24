@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './forms.css'
 
-const MyForms = () => {
+const MyForms = ({ user }) => {
 
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
+    const [name, setName] = useState(user ? user.name : '')
+    const [email, setEmail] = useState(user ? user.email : '')
 
     const handleChange = (event) => {
        setName(event.target.value)
@@ -28,6 +28,7 @@ const MyForms = () => {
                                 placeholder="Digite seu name" 
                                 autoFocus
                                 onChange={handleChange}
+                                value={name}
                                 />
                         </label>
                     </div>
@@ -38,6 +39,7 @@ const MyForms = () => {
                             type="email"
                             placeholder="Digite seu e-mail"
                             onChange={(event) => setEmail(event.target.value)}
+                            value={email}
                             />
                         </label>
                     </div>
