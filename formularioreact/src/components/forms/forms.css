@@ -54,3 +54,24 @@ input {
     margin-right: .3rem;
     font-weight: bold;
 }
+
+.bio {
+    width: 70%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-textarea {
+    width: 20rem;
+    height: 5rem;
+    border-radius: 8px;
+    border: 1px solid rgb(201, 201, 201);
+    font-size: 1rem;
+}
+
+.bio-label > span {
+    display: flex;
+    font-weight: bold;
+}
