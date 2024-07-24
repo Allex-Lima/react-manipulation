@@ -5,6 +5,7 @@ const MyForms = ({ user }) => {
 
     const [name, setName] = useState(user ? user.name : '')
     const [email, setEmail] = useState(user ? user.email : '')
+    const [bio, setBio] = useState();
 
     const handleChange = (event) => {
        setName(event.target.value)
@@ -13,10 +14,11 @@ const MyForms = ({ user }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(name, email);
+        console.log(name, email, bio);
 
         setEmail('')
         setName('')
+        setBio('')
     }
     
     return (
@@ -46,6 +48,20 @@ const MyForms = ({ user }) => {
                             />
                         </label>
                     </div>
+
+                    <div className='bio'>
+                        <label className='bio-label'>
+                            <span>Descrição</span>
+                            <textarea
+                                className='bio-textarea'
+                                name="bio"
+                                placeholder='Uma breve descrição'
+                                onChange={(e) => setBio(e.target.value)}
+                                value={bio}
+                            ></textarea>
+                        </label>
+                    </div>
+
                     <div className='div-btn-enviar'>
                         <button className='btn-enviar'>Envair</button>
                     </div>
